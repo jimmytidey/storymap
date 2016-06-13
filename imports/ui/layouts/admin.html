@@ -1,0 +1,45 @@
+<template name="Admin_page">
+	<div class="page--admin">
+		<h1>Shakespeare in Shoreditch Story Map Admin Area</h1>		
+		<div class="grid">
+			<img class="grid-map-image" src="/assets/images/map.png">
+		</div>
+		<div class="control">
+			<section class="update">
+				<a href="#" id="update-tweets">Update Tweets</a>
+			</section>
+			<section class="info">
+				<strong>Selected Location:</strong> {{selectionPosition.x}} / {{selectionPosition.y}}
+			</section>
+			{{#if isPositionFull }}
+			<section class="edit">
+				<h2>Edit Location</h2>
+				<img src="{{currentSrc}}"/>
+				<strong><a href="#delete" class="delete-content">Delete content at {{selectionPosition.x}} / {{selectionPosition.y}}</a></strong>				
+			</section>
+			{{/if}}
+			{{#if isPositionEmpty }}
+			<section class="content">
+				<h2>Click Content to Add</h2>
+				<ul>
+					{{#each availableTweets}}
+						<li>
+							<div class="tweet tweet__preview" data-tweet-id="{{tweetID}}" data-url-media="{{tweetFirstMedia}}">
+								<div class="tweet--screen_name">
+									Tweet From <a href="http://twitter.com/{{user_screen_name}}">@{{user_screen_name}}</a>
+								</div>
+								<div class="tweet--text">
+									{{tweetText}}
+								</div>
+								<div class="tweet--media">
+									<img src="{{tweetFirstMedia}}:small"/>
+								</div>
+							</div>
+						</li>
+					{{/each}}
+				</ul>
+			</section>
+			{{/if}}
+		</div>
+	</div>
+</template>
