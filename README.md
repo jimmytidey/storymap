@@ -2,7 +2,8 @@
 
 #Screens:
 
-Console:
+Add screen configuration details to /screens-config.json
+Console: 1920x1080
 Projector: 1280x720
 
 #Requirements/configuration
