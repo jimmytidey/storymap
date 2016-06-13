@@ -1,0 +1,370 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 11, ../sass/screen.scss */
+html, body, #__blaze-root {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 15, ../sass/screen.scss */
+body {
+  font-family: 'helvetica neue', arial, helvetica, sans-serif;
+}
+
+/* line 19, ../sass/screen.scss */
+.grid {
+  width: 100%;
+  height: 100%;
+}
+/* line 22, ../sass/screen.scss */
+.grid .grid-map-image {
+  display: none;
+}
+
+/* line 28, ../sass/screen.scss */
+.page--admin .grid {
+  width: 66%;
+}
+/* line 30, ../sass/screen.scss */
+.page--admin .grid canvas {
+  width: 100%;
+  height: auto;
+}
+/* line 35, ../sass/screen.scss */
+.page--admin h1 {
+  padding: 2em;
+}
+/* line 38, ../sass/screen.scss */
+.page--admin .control {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2em;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 34%;
+  background: rgba(255, 255, 255, 0.9);
+}
+/* line 47, ../sass/screen.scss */
+.page--admin .control h1, .page--admin .control h2, .page--admin .control h3, .page--admin .control h4, .page--admin .control h5, .page--admin .control h6, .page--admin .control strong {
+  font-weight: bold;
+}
+/* line 50, ../sass/screen.scss */
+.page--admin .control section {
+  margin-bottom: 2em;
+}
+/* line 51, ../sass/screen.scss */
+.page--admin .control section h2 {
+  margin-bottom: 1em;
+}
+/* line 55, ../sass/screen.scss */
+.page--admin .control section img {
+  width: 100%;
+  height: auto;
+}
+/* line 60, ../sass/screen.scss */
+.page--admin .control .content {
+  height: 60%;
+}
+/* line 63, ../sass/screen.scss */
+.page--admin .control .content ul {
+  overflow: scroll;
+  height: 100%;
+  padding-bottom: 20em;
+}
+/* line 68, ../sass/screen.scss */
+.page--admin .control .content li {
+  margin-bottom: 1em;
+}
+/* line 72, ../sass/screen.scss */
+.page--admin .control .tweet.tweet__preview {
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 2em;
+  border-bottom: 1px solid black;
+  margin-bottom: 2em;
+}
+/* line 79, ../sass/screen.scss */
+.page--admin .control .tweet.tweet__preview:hover:before {
+  content: '';
+  background: rgba(255, 0, 0, 0.8);
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+/* line 90, ../sass/screen.scss */
+.page--admin .control .tweet.tweet__preview:hover:after {
+  content: 'Add At Selected Location';
+  text-align: center;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 102, ../sass/screen.scss */
+.page--admin .control .tweet.tweet__preview .tweet--screen_name,
+.page--admin .control .tweet.tweet__preview .tweet--text {
+  margin-bottom: .5em;
+}
+
+/* line 110, ../sass/screen.scss */
+.page--grid {
+  background: #000000;
+  height: 100%;
+  overflow: hidden;
+}
+/* line 114, ../sass/screen.scss */
+.page--grid .grid {
+  height: 100%;
+}
+
+/* line 119, ../sass/screen.scss */
+.page--layout {
+  position: relative;
+}
+/* line 122, ../sass/screen.scss */
+.page--layout .screen-bounds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline: 2px solid lime;
+  width: 844px;
+  height: 475px;
+}
+
+/* line 134, ../sass/screen.scss */
+.page--camera .scanner-container video {
+  width: 100%;
+  height: auto;
+}
+/* line 138, ../sass/screen.scss */
+.page--camera .scanner-container .scanner-cropbox {
+  border: 5px solid #00FF00;
+}
+
+/* line 144, ../sass/screen.scss */
+.page--content {
+  background: #000000;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+/* line 149, ../sass/screen.scss */
+.page--content .square-wrapper {
+  background: #ffffff;
+  position: absolute;
+  left: 50%;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 100%;
+  text-align: center;
+}
+/* line 157, ../sass/screen.scss */
+.page--content .content {
+  width: 100%;
+  height: 100%;
+}
+/* line 160, ../sass/screen.scss */
+.page--content .content .message {
+  margin-top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 165, ../sass/screen.scss */
+.page--content img {
+  width: 100%;
+  height: auto;
+}
+/* line 169, ../sass/screen.scss */
+.page--content .content.has-content {
+  position: relative;
+  background: #7f7f7f;
+}
+/* line 175, ../sass/screen.scss */
+.page--content .content.has-content .content--image {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 181, ../sass/screen.scss */
+.page--content .content.has-content .tweet-details {
+  color: #7f7f7f;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: left;
+}
+/* line 188, ../sass/screen.scss */
+.page--content .content.has-content .tweet-details .tweet-details--user {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background: #ffffff;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 80px;
+  padding-right: 20px;
+}
+/* line 197, ../sass/screen.scss */
+.page--content .content.has-content .tweet-details .tweet-details--user img {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px 0 10px 10px;
+  width: 70px;
+  float: left;
+  margin-right: 20px;
+  display: block;
+}
+/* line 205, ../sass/screen.scss */
+.page--content .content.has-content .tweet-details .tweet-details--user .name {
+  float: left;
+  position: relative;
+  margin-top: 40px;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 213, ../sass/screen.scss */
+.page--content .content.has-content .tweet-details .tweet-details--user .name h1 {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+/* line 220, ../sass/screen.scss */
+.page--content .content.has-content .tweet-details .tweet-details--text {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  right: 50px;
+  background: #ffffff;
+  line-height: 1.4;
+}
+/* line 233, ../sass/screen.scss */
+.page--content .new-message {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  text-align: center;
+  opacity: 0;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.7);
+}
+/* line 242, ../sass/screen.scss */
+.page--content .new-message span {
+  display: block;
+  width: 100%;
+  top: 50%;
+  position: absolute;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: #Ff0000;
+}
+/* line 254, ../sass/screen.scss */
+.page--content .content.newly-added .new-message {
+  opacity: 1;
+}
+
+/* line 261, ../sass/screen.scss */
+.message.message__deleted {
+  font-weight: bold;
+  color: red;
+}

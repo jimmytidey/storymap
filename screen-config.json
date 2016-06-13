@@ -1,0 +1,21 @@
+{
+	"screens": [
+		{
+			"path": "input",
+			"width": 1280,
+			"height": 720,
+			"offsetX": 0,
+			"offsetY": 0,
+			"fullscreen": true
+		},
+		{
+			"path": "output",
+			"width": 1920,
+			"height": 1080,
+			"offsetX": 0,
+			"offsetY": 0,
+			"fullscreen": false
+		}
+	],
+	"focus": "input"
+}
