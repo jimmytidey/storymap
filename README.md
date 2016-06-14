@@ -1,9 +1,10 @@
 #Setup
 
-1. rename imports/config-default.js to config.js
-2. add twitter API keys, change to correct account, hashtag etc
-3. add localnets URL
-4. cd .electron, run 
+1. run ```npm install``` to get the  twit module
+2. rename imports/config-default.js to config.js
+3. add twitter API keys, change to correct account, hashtag etc
+4. add localnets URL
+ 
 
 
 #Details
