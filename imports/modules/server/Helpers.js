@@ -80,6 +80,11 @@ var Helpers = {
       point[1] = Math.floor( Config.grid.min * Config.grid.ratio.y );
     }
     return point;
+  },
+  fitToCells: function( point, cellSize ){
+    point[0] = Math.round( point[0] / cellSize[0] ) * cellSize[0];
+    point[1] = Math.round( point[1] / cellSize[1] ) * cellSize[1];
+    return point;
   }
 };
 
