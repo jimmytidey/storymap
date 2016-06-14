@@ -5,7 +5,8 @@ export const Config = {
 		ratio: {
 			x: 1,
 			y: 0.860
-		},		
+		},
+		overflowRingCount: 2		
 	},
 	world: {
 		nw: [ 53.411729, -2.998487 ],
