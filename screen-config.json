@@ -1,7 +1,7 @@
 {
 	"screens": [
 		{
-			"path": "outpu",
+			"path": "output",
 			"width": 1920,
 			"height": 500,
 			"offsetX": 0,
