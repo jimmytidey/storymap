@@ -1,17 +1,17 @@
 {
 	"screens": [
 		{
-			"path": "input",
-			"width": 1280,
-			"height": 720,
+			"path": "outpu",
+			"width": 1920,
+			"height": 500,
 			"offsetX": 0,
 			"offsetY": 0,
 			"fullscreen": true
 		},
 		{
-			"path": "output",
-			"width": 1920,
-			"height": 1080,
+			"path": "input",
+			"width": 1280,
+			"height": 500,
 			"offsetX": 0,
 			"offsetY": 0,
 			"fullscreen": false
