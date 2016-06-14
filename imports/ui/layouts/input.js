@@ -29,7 +29,10 @@ var createContentAtCursor = function(){
   Meteor.clearTimeout( self.newContributionTimeout );
   Cursor.update( {_id: cursor._id}, {$set: {newContribution: true}} )
 
-  var startAddAt = (new Date()).getTime();
+  Meteor.clearTimeout( self.updateTimeout );
+  self.updateTimeout = Meteor.setTimeout(function(){
+     Cursor.update( {_id: cursor._id}, {$set: {newContribution: false}} );
+  }, 100 );
 
   Meteor.call(
     'contributions.addFromTableAt', 
@@ -46,20 +49,10 @@ var createContentAtCursor = function(){
     function( err, res ){ 
       if( err ){
         console.log( err );
-        // cancel visual feedback if cell is already full
-        Cursor.update( {_id: cursor._id}, {$set: {newContribution: false}} )
+        // cancel visual feedback if cell is already full        
         self.grid.cancelAddedContribution();
-      } else {        
-        //otherwise, wait a little while before canceling
-        var time = (new Date()).getTime();
-        if( time - startAddAt < Config.output.feedbackTime ){
-          self.newContributionTimeout = Meteor.setTimeout(function(){
-            Cursor.update( {_id: cursor._id}, {$set: {newContribution: false}} );
-          }, time - startAddAt );
-        } else {
-          Cursor.update( {_id: cursor._id}, {$set: {newContribution: false}} );
-        }
-      }
+      }       
+      Cursor.update( {_id: cursor._id}, {$set: {newContribution: false}} );
       console.log( err, res ) 
     }
   );
@@ -161,6 +154,7 @@ Template.Grid_page.onRendered(function(){
   this.subscribe( 'all-cursors',{},{
     onReady: function(){
       var cursor = Cursor.findOne({});
+      Cursor.update( {_id: cursor._id}, {$set: {newContribution: false}} );
       var gridW = 1080 * 2;
       var gridH = ( gridW / Config.grid.ratio.x ) * Config.grid.ratio.y;
       self.grid = new Grid( gridW, gridH, cursor );

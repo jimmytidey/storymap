@@ -170,89 +170,28 @@ html, body, #__blaze-root{
 		position: relative;
 		overflow: hidden;
 		.square-wrapper{
-			background: #ffffff;
+			background: #000000;
 			position: absolute;
 			left: 50%;
 			@include transform( translateX( -50%) );
 			height: 100%;
 			text-align: center;
-		}
-		.content{
-			width: 100%;
-			height: 100%;
-			.message{
-				margin-top: 50%;
-				@include transform( translateY( -50%) );
-			}
-		}		
-		img{
-			width: 	100%;
-			height: auto;
-		}
-		.content.has-content{
-			position: relative;
-			background: $clr_bg;
-			*{
-				//outline: 1px solid red;
-			}
-			.content--image{
-				position: absolute;
-				top: 50%;
-				left: 0;
-				@include transform( translateY(-50%) );
-			}
-			.tweet-details{
-				$details_padding: 20px;
-				color: $clr_bg;
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			.content{
 				width: 100%;
 				height: 100%;
-				position: relative;
-				text-align: left;
-				.tweet-details--user{					
-					position: absolute;
-					top: 50px;
-					left: 50px;
-					//ight: $details_padding;					
-					background: #ffffff;
-					@include box-sizing( border-box );
-					height: 80px;
-					padding-right: $details_padding;
-					img{
-						@include box-sizing( border-box );
-						padding: 10px 0 10px 10px;
-						width: 70px;
-						float: left;
-						margin-right: $details_padding;
-						display: block;
-					}
-					.name{
-						float: left;
-						//position: absolute;
-						position: relative;
-						//top: 50%;
-						//left: 70px;
-						margin-top: 40px;
-						@include transform( translateY(-50%));
-						h1{
-							font-weight: bold;
-							margin-bottom: 3px;
-						}
-
-					}
-				}
-				.tweet-details--text{
-					@include box-sizing( border-box );
-					padding: 15px $details_padding;
-					position: absolute;
-					bottom: 50px;
-					left: 50px;
-					right: 50px;
-					background: #ffffff;
-					line-height: 1.4;
+				@include transition( opacity .5s ease-in-out );
+				&.hidden{
+					@include transition( opacity .1s ease-in-out );
+					opacity: 0;
 				}
 			}
 		}
 		
+	
+
 		@include keyframes( console-feedback ){
 			0%{
 				opacity: 0;
@@ -285,7 +224,7 @@ html, body, #__blaze-root{
 			}
 		}
 
-		.content.newly-added{
+		.square-wrapper.newly-added{
 			.new-message{
 				@include animation( console-feedback .5s linear );
 			}

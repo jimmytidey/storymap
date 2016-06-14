@@ -256,7 +256,7 @@ body {
 }
 /* line 172, ../sass/screen.scss */
 .page--content .square-wrapper {
-  background: #ffffff;
+  background: #000000;
   position: absolute;
   left: 50%;
   -moz-transform: translateX(-50%);
@@ -265,98 +265,26 @@ body {
   transform: translateX(-50%);
   height: 100%;
   text-align: center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-/* line 180, ../sass/screen.scss */
-.page--content .content {
+/* line 182, ../sass/screen.scss */
+.page--content .square-wrapper .content {
   width: 100%;
   height: 100%;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
-/* line 183, ../sass/screen.scss */
-.page--content .content .message {
-  margin-top: 50%;
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-/* line 188, ../sass/screen.scss */
-.page--content img {
-  width: 100%;
-  height: auto;
-}
-/* line 192, ../sass/screen.scss */
-.page--content .content.has-content {
-  position: relative;
-  background: #7f7f7f;
-}
-/* line 198, ../sass/screen.scss */
-.page--content .content.has-content .content--image {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-/* line 204, ../sass/screen.scss */
-.page--content .content.has-content .tweet-details {
-  color: #7f7f7f;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  text-align: left;
-}
-/* line 211, ../sass/screen.scss */
-.page--content .content.has-content .tweet-details .tweet-details--user {
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  background: #ffffff;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  height: 80px;
-  padding-right: 20px;
-}
-/* line 220, ../sass/screen.scss */
-.page--content .content.has-content .tweet-details .tweet-details--user img {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 10px 0 10px 10px;
-  width: 70px;
-  float: left;
-  margin-right: 20px;
-  display: block;
-}
-/* line 228, ../sass/screen.scss */
-.page--content .content.has-content .tweet-details .tweet-details--user .name {
-  float: left;
-  position: relative;
-  margin-top: 40px;
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-/* line 236, ../sass/screen.scss */
-.page--content .content.has-content .tweet-details .tweet-details--user .name h1 {
-  font-weight: bold;
-  margin-bottom: 3px;
-}
-/* line 243, ../sass/screen.scss */
-.page--content .content.has-content .tweet-details .tweet-details--text {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 15px 20px;
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
-  right: 50px;
-  background: #ffffff;
-  line-height: 1.4;
+/* line 186, ../sass/screen.scss */
+.page--content .square-wrapper .content.hidden {
+  -moz-transition: opacity 0.1s ease-in-out;
+  -o-transition: opacity 0.1s ease-in-out;
+  -webkit-transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
+  opacity: 0;
 }
 @-moz-keyframes console-feedback {
   0% {
@@ -391,7 +319,7 @@ body {
     opacity: 0;
   }
 }
-/* line 268, ../sass/screen.scss */
+/* line 207, ../sass/screen.scss */
 .page--content .new-message {
   position: absolute;
   height: 100%;
@@ -401,7 +329,7 @@ body {
   opacity: 0;
   background: #FFFFFF;
 }
-/* line 277, ../sass/screen.scss */
+/* line 216, ../sass/screen.scss */
 .page--content .new-message span {
   display: none;
   width: 100%;
@@ -414,14 +342,14 @@ body {
   font-size: 2em;
   color: #Ff0000;
 }
-/* line 289, ../sass/screen.scss */
-.page--content .content.newly-added .new-message {
+/* line 228, ../sass/screen.scss */
+.page--content .square-wrapper.newly-added .new-message {
   -moz-animation: console-feedback 0.5s linear;
   -webkit-animation: console-feedback 0.5s linear;
   animation: console-feedback 0.5s linear;
 }
 
-/* line 296, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 .message.message__deleted {
   font-weight: bold;
   color: red;
