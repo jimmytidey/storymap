@@ -331,6 +331,10 @@ var Grid = function( width, height, _cursor, _contributions ){
 		// console.log( 'IS: ', $(this.canvas).css('transform') );
 	}
 
+	this.setDebugTo = function( to ){
+		this.DEBUG = !!to;
+	}
+
 	this.toggleDebug = function(){
 		this.DEBUG = !this.DEBUG;
 	};
