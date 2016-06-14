@@ -1,10 +1,19 @@
 #Setup
 
+I think these are all the steps:
+
 1. run ```npm install``` to get the  twit module
 2. rename imports/config-default.js to config.js
 3. add twitter API keys, change to correct account, hashtag etc
 4. add localnets URL
- 
+
+For autorun:
+
+In _utilities there is an ```init.applescript``` with 2 variables:
+- mongourl: the full url of the remote mongo database
+- dir: absolute path for the root directory of the project (where you would run ```meteor``` or ```electrify``` from)
+
+Change these 2 in the Script Editor and export it as an Application. This can then be placed anywhere (as we have an absolute path) and set to run on startup
 
 
 #Details
