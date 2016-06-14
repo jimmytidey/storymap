@@ -358,7 +358,40 @@ body {
   background: #ffffff;
   line-height: 1.4;
 }
-/* line 256, ../sass/screen.scss */
+@-moz-keyframes console-feedback {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes console-feedback {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes console-feedback {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* line 268, ../sass/screen.scss */
 .page--content .new-message {
   position: absolute;
   height: 100%;
@@ -366,15 +399,11 @@ body {
   top: 0;
   text-align: center;
   opacity: 0;
-  -moz-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-  background: rgba(255, 255, 255, 0.7);
+  background: #FFFFFF;
 }
-/* line 265, ../sass/screen.scss */
+/* line 277, ../sass/screen.scss */
 .page--content .new-message span {
-  display: block;
+  display: none;
   width: 100%;
   top: 50%;
   position: absolute;
@@ -385,12 +414,14 @@ body {
   font-size: 2em;
   color: #Ff0000;
 }
-/* line 277, ../sass/screen.scss */
+/* line 289, ../sass/screen.scss */
 .page--content .content.newly-added .new-message {
-  opacity: 1;
+  -moz-animation: console-feedback 0.5s linear;
+  -webkit-animation: console-feedback 0.5s linear;
+  animation: console-feedback 0.5s linear;
 }
 
-/* line 284, ../sass/screen.scss */
+/* line 296, ../sass/screen.scss */
 .message.message__deleted {
   font-weight: bold;
   color: red;
