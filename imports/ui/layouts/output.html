@@ -1,40 +1,10 @@
 <template name="Output_page">
 	<div class="page--content">
-		<div class="square-wrapper">
-		{{#if currentSrc}}
-			<div class="content has-content{{#if newContribution}} newly-added{{/if}}">
-				<img src="{{currentSrc}}" class="content--image"/>
-
-				{{#if isLocalnets}}
-					<div class="tweet-details">
-						<div class="tweet-details--user">
-							
-							<img src="{{tweetDetails.profileImage}}">
-							<div class="name">
-								<h1>{{tweetDetails.username}}</h1>
-								<h2>@{{tweetDetails.user_screen_name}}</h2>
-							</div>							
-						</div>
-						<div class="tweet-details--text">
-							{{tweetDetails.tweetText}}
-						</div>
-						
-					</div>	
-				{{/if}}
-	
-				<div class="new-message">
-					<span>THANKS!</span>
-				</div>
-
-			</div>
-		{{else}}
-			<div class="content no-content">
-				<img src="/assets/images/no-content.png">
-				<!-- <div class="message">
-					No content found for this location. Why not add some?
-				</div> -->
-			</div>			
-		{{/if}}		
+		<div class="square-wrapper{{#if newContribution}} newly-added{{/if}}" style="background-image: url({{currentSrc}})">
+			
+			<div id="tweet" class="content"></div>
+		
+			<div class="new-message"></div>
 		</div>
 	</div>
 </template>
