@@ -252,7 +252,19 @@ html, body, #__blaze-root{
 				}
 			}
 		}
-	
+		
+		@include keyframes( console-feedback ){
+			0%{
+				opacity: 0;
+			}
+			50%{
+				opacity:1;
+			}
+			100%{
+				opacity: 0;
+			}
+		}
+
 		.new-message{
 			position: absolute;
 			height: 100%;
@@ -260,10 +272,10 @@ html, body, #__blaze-root{
 			top: 0;
 			text-align: center;
 			opacity: 0;
-			@include transition( opacity .3s ease-in-out );
-			background: rgba( 255,255,255, 0.7 );
+			//@include transition( opacity .3s ease-in-out );
+			background: #FFFFFF;
 			span{
-				display: block;
+				display: none;
 				width: 100%;
 				top: 50%;
 				position: absolute;
@@ -275,7 +287,7 @@ html, body, #__blaze-root{
 
 		.content.newly-added{
 			.new-message{
-				opacity: 1;
+				@include animation( console-feedback .5s linear );
 			}
 		}
 	}
