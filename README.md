@@ -1,3 +1,11 @@
+#Setup
+
+1. rename imports/config-default.js to config.js
+2. add twitter API keys, change to correct account, hashtag etc
+3. add localnets URL
+4. cd .electron, run 
+
+
 #Details
 
 #Screens:
@@ -7,6 +15,16 @@ Console: 1920x1080
 Projector: 1280x720
 
 #Requirements/configuration
+
+##sass/compass
+
+Compile down to css.
+
+See: http://compass-style.org/
+
+To run:
+```cd public/assets```
+```compass watch```
 
 ##electrify 
 
