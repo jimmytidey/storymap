@@ -29,6 +29,11 @@ Transforms.schema = new SimpleSchema({
 		type: Object,
 		blackbox: true,
 		optional: true
+	},
+	showMap: {
+		label: 'Show Map',
+		type: Boolean,
+		defaultValue: false
 	}
 });
 

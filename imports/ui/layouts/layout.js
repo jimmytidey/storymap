@@ -22,9 +22,11 @@ var updateTransform = function( to, layout ){
 
 Template.Layout_page.onRendered(function(){
   var self = this;
+  self.warp = false;
+
   var ready = function(){
     var cursor = Cursor.findOne({});
-    var transform = Transforms.findOne({});
+    self.transform = Transforms.findOne({});
     var gridW = 1080;
     var gridH = ( gridW / Config.grid.ratio.x ) * Config.grid.ratio.y;
     self.grid = new Grid( gridW, gridH, cursor );
@@ -36,27 +38,28 @@ Template.Layout_page.onRendered(function(){
     self.grid.render();
 
     $(window).on('keydown', function( e ){
-      if( e.shiftKey && e.keyCode === 32 ){ // spacebar && shift
+      if( e.keyCode === 68 ){
         self.grid.toggleDebug();
         self.grid.render();
+        Transforms.update( self.transform._id, { $set: { showMap: self.grid.DEBUG }} );
       }
     });
 
-    var mt = Maptastic({
+   self.mt = Maptastic({
       autoSave: false,
       autoLoad: false,
       onchange: function(){
         var newTransform = $( self.grid.canvas ).css('transform');
         console.log( 'Layout Change: ' );
         console.log( newTransform );
-        console.log( mt.getLayout()[0] );
-        updateTransform( newTransform, mt.getLayout()[0] );
+        console.log( self.mt.getLayout()[0] );
+        updateTransform( newTransform, self.mt.getLayout()[0] );
       },
       layers: [ self.grid.canvas ]
     });  
 
-    if( transform && transform.rawLayout ){
-      mt.setLayout( [transform.rawLayout] );
+    if( self.transform && self.transform.rawLayout ){
+      self.mt.setLayout( [ self.transform.rawLayout ] );
     }
 
   }
@@ -78,5 +81,15 @@ Template.Layout_page.helpers({
 });
 
 Template.Layout_page.events({
- 
+  'click .toggleMap'( e ){
+    var self = Template.instance();
+    self.grid.toggleDebug();
+    self.grid.render();
+    Transforms.update( self.transform._id, { $set: { showMap: self.grid.DEBUG }} );
+  },
+  'click .toggleWarp'( e ){
+    var self = Template.instance();
+    self.warp = !self.warp;
+    self.mt.setConfigEnabled( self.warp );
+  }
 });

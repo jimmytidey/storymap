@@ -210,24 +210,51 @@ body {
   height: 475px;
 }
 
-/* line 134, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
+.layout-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000001;
+}
+/* line 137, ../sass/screen.scss */
+.layout-controls button {
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px 2px;
+  width: 70px;
+  border: none;
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+/* line 146, ../sass/screen.scss */
+.layout-controls button:focus {
+  outline: none;
+}
+/* line 149, ../sass/screen.scss */
+.layout-controls button:hover {
+  background: #FF8888;
+}
+
+/* line 157, ../sass/screen.scss */
 .page--camera .scanner-container video {
   width: 100%;
   height: auto;
 }
-/* line 138, ../sass/screen.scss */
+/* line 161, ../sass/screen.scss */
 .page--camera .scanner-container .scanner-cropbox {
   border: 5px solid #00FF00;
 }
 
-/* line 144, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .page--content {
   background: #000000;
   height: 100%;
   position: relative;
   overflow: hidden;
 }
-/* line 149, ../sass/screen.scss */
+/* line 172, ../sass/screen.scss */
 .page--content .square-wrapper {
   background: #ffffff;
   position: absolute;
@@ -239,12 +266,12 @@ body {
   height: 100%;
   text-align: center;
 }
-/* line 157, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 .page--content .content {
   width: 100%;
   height: 100%;
 }
-/* line 160, ../sass/screen.scss */
+/* line 183, ../sass/screen.scss */
 .page--content .content .message {
   margin-top: 50%;
   -moz-transform: translateY(-50%);
@@ -252,17 +279,17 @@ body {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 165, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 .page--content img {
   width: 100%;
   height: auto;
 }
-/* line 169, ../sass/screen.scss */
+/* line 192, ../sass/screen.scss */
 .page--content .content.has-content {
   position: relative;
   background: #7f7f7f;
 }
-/* line 175, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 .page--content .content.has-content .content--image {
   position: absolute;
   top: 50%;
@@ -272,7 +299,7 @@ body {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 181, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 .page--content .content.has-content .tweet-details {
   color: #7f7f7f;
   width: 100%;
@@ -280,7 +307,7 @@ body {
   position: relative;
   text-align: left;
 }
-/* line 188, ../sass/screen.scss */
+/* line 211, ../sass/screen.scss */
 .page--content .content.has-content .tweet-details .tweet-details--user {
   position: absolute;
   top: 50px;
@@ -292,7 +319,7 @@ body {
   height: 80px;
   padding-right: 20px;
 }
-/* line 197, ../sass/screen.scss */
+/* line 220, ../sass/screen.scss */
 .page--content .content.has-content .tweet-details .tweet-details--user img {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -303,7 +330,7 @@ body {
   margin-right: 20px;
   display: block;
 }
-/* line 205, ../sass/screen.scss */
+/* line 228, ../sass/screen.scss */
 .page--content .content.has-content .tweet-details .tweet-details--user .name {
   float: left;
   position: relative;
@@ -313,12 +340,12 @@ body {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 213, ../sass/screen.scss */
+/* line 236, ../sass/screen.scss */
 .page--content .content.has-content .tweet-details .tweet-details--user .name h1 {
   font-weight: bold;
   margin-bottom: 3px;
 }
-/* line 220, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 .page--content .content.has-content .tweet-details .tweet-details--text {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -331,7 +358,7 @@ body {
   background: #ffffff;
   line-height: 1.4;
 }
-/* line 233, ../sass/screen.scss */
+/* line 256, ../sass/screen.scss */
 .page--content .new-message {
   position: absolute;
   height: 100%;
@@ -345,7 +372,7 @@ body {
   transition: opacity 0.3s ease-in-out;
   background: rgba(255, 255, 255, 0.7);
 }
-/* line 242, ../sass/screen.scss */
+/* line 265, ../sass/screen.scss */
 .page--content .new-message span {
   display: block;
   width: 100%;
@@ -358,12 +385,12 @@ body {
   font-size: 2em;
   color: #Ff0000;
 }
-/* line 254, ../sass/screen.scss */
+/* line 277, ../sass/screen.scss */
 .page--content .content.newly-added .new-message {
   opacity: 1;
 }
 
-/* line 261, ../sass/screen.scss */
+/* line 284, ../sass/screen.scss */
 .message.message__deleted {
   font-weight: bold;
   color: red;

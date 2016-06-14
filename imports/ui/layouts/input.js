@@ -216,6 +216,9 @@ Template.Grid_page.onRendered(function(){
         // apply the saved / database transform to the grid
         // this works because the elements have the same ID
         mt.setLayout( [transform.rawLayout] );
+        //console.log( 'MAP? ', transform.showMap );
+        self.grid.setDebugTo( transform.showMap );
+        self.grid.render();
 
       });
     }

@@ -129,6 +129,29 @@ html, body, #__blaze-root{
 		}
 	}
 
+	.layout-controls{
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		z-index: 1000001;
+		button{
+			display: block;
+			margin-bottom: 20px;
+			padding: 10px 2px;
+			width: 70px;
+			border: none;
+			background: red;
+			color: white;
+			cursor: pointer;
+			&:focus{
+				outline: none;
+			}
+			&:hover{
+				background: #FF8888;
+			}
+		}
+	}
+
 	.page--camera{
 		.scanner-container{
 			video{
