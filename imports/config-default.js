@@ -18,9 +18,6 @@ export const Config = {
 		moveRate: 20, //how many (max) times should the cursor be able to move per second
 		historyLength: 300 // how many previous steps should we save & draw?
 	},
-	output: {
-		feedbackTime: 1000
-	},
 	data:{
 		path: process.env['PWD'] + '/media/',
 		thumbnailPath: process.env['PWD'] + '/media/thumbnails/'
