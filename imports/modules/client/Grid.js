@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Config } from '../../config.js';
 import { Cell } from './Cell.js';
 
-var Grid = function( width, height, _cursor, _contributions ){
+var Grid = function( width, height, _cursor, _contributions, map_img_src ){
 	var self = this;
 	
 	var tempCursorCount = 0;
@@ -18,8 +18,14 @@ var Grid = function( width, height, _cursor, _contributions ){
 	var contributionAddedLength = Config.cursor.feedbackTime;
 	var contributionAddedTimer = 0;
 
-
-	this.mapImage = $('.grid-map-image')[0];
+	this.mapImgLoaded = false;
+	if( map_img_src ){
+		this.mapImage = document.createElement('img');//$('.grid-map-image')[0];		
+		$( this.mapImage ).on('load', function(){
+			self.mapImgLoaded = true;
+		});
+		this.mapImage.src = map_img_src;
+	}
 
 	var ctx = this.canvas.getContext( '2d' );	
 
@@ -228,7 +234,7 @@ var Grid = function( width, height, _cursor, _contributions ){
 	this.render = function(){
 		ctx.fillStyle = 'rgba(100,100,100,1)';
 		ctx.fillRect( 0, 0, this.canvas.width, this.canvas.height );		
-		if( this.DEBUG ){
+		if( this.DEBUG && this.mapImgLoaded ){
 			ctx.drawImage( this.mapImage, 0, 0, this.canvas.width, (this.canvas.width / this.mapImage.width) * this.mapImage.height );
 		}
 
@@ -298,7 +304,7 @@ var Grid = function( width, height, _cursor, _contributions ){
 		if( _contributions && _contributions.length ){
 			var currentIDs = [];
 			for( var i = 0; i < _contributions.length; i++ ){
-				var c = _contributions[i]
+				var c = _contributions[i];
 				currentIDs.push( c._id );
 				if( !this.contributions[ c._id ] ){
 					var pos = calculateGridCoords( c.position[0], c.position[1], this.cursor.size[0], this.cursor.size[1] );

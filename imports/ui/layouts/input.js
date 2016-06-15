@@ -157,7 +157,7 @@ Template.Grid_page.onRendered(function(){
       Cursor.update( {_id: cursor._id}, {$set: {newContribution: false}} );
       var gridW = 1080 * 2;
       var gridH = ( gridW / Config.grid.ratio.x ) * Config.grid.ratio.y;
-      self.grid = new Grid( gridW, gridH, cursor );
+      self.grid = new Grid( gridW, gridH, cursor, false, Config.grid.mapImgSrc );
       self.$('.grid').append( self.grid.canvas );
 
       self.autorun(function(){

@@ -29,7 +29,7 @@ Template.Layout_page.onRendered(function(){
     self.transform = Transforms.findOne({});
     var gridW = 1080;
     var gridH = ( gridW / Config.grid.ratio.x ) * Config.grid.ratio.y;
-    self.grid = new Grid( gridW, gridH, cursor );
+    self.grid = new Grid( gridW, gridH, cursor, false, Config.grid.mapImgSrc );
 
     self.$('.grid').append( self.grid.canvas );
     // if( transform && transform.cssTransform ){
