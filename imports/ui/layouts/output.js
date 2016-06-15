@@ -20,7 +20,7 @@ Template.Output_page.onCreated(function(){
   this.subscribe( 'all-localnets' );
 
   self.twitterReady = false;
-  console.log( 'twitter ready' );
+
   $.getScript('https://platform.twitter.com/widgets.js', function(){
     self.twitterReady = true;
     self.twttr = twttr;
@@ -75,7 +75,7 @@ Template.Output_page.onRendered(function(){
 
 
 Template.Output_page.helpers({
-currentSrc: function(){
+  currentSrc: function(){
     var contribution = Contributions.findOne({});
     if( contribution ){
       var mediaUrl = '/media/' + contribution.media;
@@ -85,6 +85,10 @@ currentSrc: function(){
       return mediaUrl;
     }
     return false;
+  },
+  emptyCell: function(){
+    var contribution = Contributions.findOne({});
+    return !contribution;
   },
   newContribution: function(){
     var cursor = Cursor.findOne({});

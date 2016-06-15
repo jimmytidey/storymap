@@ -313,7 +313,7 @@ body {
 }
 /* line 212, ../sass/screen.scss */
 .page--content .square-wrapper {
-  background: #000000;
+  background: #7f7f7f;
   position: absolute;
   left: 50%;
   -moz-transform: translateX(-50%);
@@ -327,6 +327,18 @@ body {
   background-repeat: no-repeat;
 }
 /* line 222, ../sass/screen.scss */
+.page--content .square-wrapper .content.no-content {
+  display: none;
+}
+/* line 226, ../sass/screen.scss */
+.page--content .square-wrapper.no-content .content {
+  display: none;
+}
+/* line 229, ../sass/screen.scss */
+.page--content .square-wrapper.no-content .content.no-content {
+  display: block;
+}
+/* line 233, ../sass/screen.scss */
 .page--content .square-wrapper .content {
   width: 100%;
   height: 100%;
@@ -335,13 +347,21 @@ body {
   -webkit-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
 }
-/* line 226, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 .page--content .square-wrapper .content.hidden {
   -moz-transition: opacity 0.1s ease-in-out;
   -o-transition: opacity 0.1s ease-in-out;
   -webkit-transition: opacity 0.1s ease-in-out;
   transition: opacity 0.1s ease-in-out;
   opacity: 0;
+}
+/* line 241, ../sass/screen.scss */
+.page--content .square-wrapper .content.no-content {
+  background-color: #7f7f7f;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../images/no-content.png");
 }
 @-moz-keyframes console-feedback {
   0% {
@@ -376,7 +396,7 @@ body {
     opacity: 0;
   }
 }
-/* line 247, ../sass/screen.scss */
+/* line 265, ../sass/screen.scss */
 .page--content .new-message {
   position: absolute;
   height: 100%;
@@ -386,7 +406,7 @@ body {
   opacity: 0;
   background: #FFFFFF;
 }
-/* line 256, ../sass/screen.scss */
+/* line 274, ../sass/screen.scss */
 .page--content .new-message span {
   display: none;
   width: 100%;
@@ -399,14 +419,14 @@ body {
   font-size: 2em;
   color: #Ff0000;
 }
-/* line 268, ../sass/screen.scss */
+/* line 286, ../sass/screen.scss */
 .page--content .square-wrapper.newly-added .new-message {
   -moz-animation: console-feedback 0.5s linear;
   -webkit-animation: console-feedback 0.5s linear;
   animation: console-feedback 0.5s linear;
 }
 
-/* line 275, ../sass/screen.scss */
+/* line 293, ../sass/screen.scss */
 .message.message__deleted {
   font-weight: bold;
   color: red;

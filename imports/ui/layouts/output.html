@@ -1,9 +1,11 @@
 <template name="Output_page">
 	<div class="page--content">
-		<div class="square-wrapper{{#if newContribution}} newly-added{{/if}}" style="background-image: url({{currentSrc}})">
+		<div class="square-wrapper{{#if newContribution}} newly-added{{/if}}{{#if emptyCell}} no-content{{/if}}" style="background-image: url({{currentSrc}})">
 			
-			<div id="tweet" class="content"></div>
-		
+				<div class="content no-content"></div>
+			
+				<div id="tweet" class="content"></div>
+			
 			<div class="new-message"></div>
 		</div>
 	</div>
