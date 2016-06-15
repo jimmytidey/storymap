@@ -237,12 +237,5 @@ Template.Admin_page.events({
         console.log( 'contributions.addExistingTweetAt: ', err,res );
       }
     )
-  },
-  'click #update-tweets': function( e, self ){
-    console.log('update tweets');
-    Meteor.call('tweets.updateData',{}, function( err,res ){
-      console.log( err, res );
-    })
   }
-
 });
