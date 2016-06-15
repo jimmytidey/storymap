@@ -1,5 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 
+import fs from 'fs';
+
+
 //routes
 import './routes.js';
 
@@ -22,11 +25,17 @@ import '../../api/transforms/server/publications.js';
 
 import { LocalnetsApi } from '../../modules/server/Localnets.js';
 
+import { Helpers } from '../../modules/server/Helpers.js';
+
 import { Config } from '../../config.js';
 
 var lnApi;
 
 Meteor.startup(() => {
+	//ensure folders
+	Helpers.makeFolderIfNotExists( Config.data.path );
+	Helpers.makeFolderIfNotExists( Config.data.thumbnailPath );
+
 	// also exactly and only one transforms object
 	if( Transforms.find().count() === 0 ){
 		// if there are no Transformss, add one

@@ -3,6 +3,13 @@ import fs from 'fs';
 import { Config } from '../../config.js';
 
 var Helpers = {
+  makeFolderIfNotExists: function( path ){
+    try{
+      var stats = fs.statSync( path );
+    } catch( e ){
+      fs.mkdirSync( path );
+    }
+  },
   calculateCellBox: function( position, size ){
     var cellBoundarySize = 0.000001; //0.00001 //so that a point on the boundary becomes definitive
     return [
