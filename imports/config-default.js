@@ -6,7 +6,8 @@ export const Config = {
 			x: 1,
 			y: 0.860
 		},
-		overflowRingCount: 2		
+		overflowRingCount: 2,
+		mapImgSrc: '/assets/images/map.png'
 	},
 	world: {
 		nw: [ 53.411729, -2.998487 ],
